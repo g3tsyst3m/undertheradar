@@ -14,7 +14,7 @@ function shellcmds {
 	{
 	$arguments='cmd.exe /c' + $myinput + ' >> c:\users\public\output.txt'
 	}
-	Invoke-WmiMethod -Class Win32_Process -Name Create -ArgumentList $arguments -ComputerName $ipcomputer -Credential $cred
+	Invoke-WmiMethod -Class Win32_Process -Name Create -ArgumentList $arguments -ComputerName $ipcomputer -Credential $cred >> c:/users/public/troubleshooting_log.log
 }
 
 Write-Host "ip or computername:"
