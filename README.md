@@ -8,6 +8,12 @@ Allows the pentester a means of executing commands on the remote machine via Pow
 We take advantage of using SMB file access and simply tail the file that receives our command output using Notepad++.  
 ![undertheradar2](https://github.com/g3tsyst3m/undertheradar/assets/19558280/3e302c33-26da-4b89-b176-6dc945b25e77)
 
+**Here's how you can enable the Tail -f feature in Notepad++.**
+- Click View
+- Select this: ![image](https://github.com/g3tsyst3m/undertheradar/assets/19558280/04488232-ef79-404c-b694-e937a7501a8c)
+
+
+
 # Dumpy.py
 
 **Dumps SAM and SYSTEM files from registry for offline cracking**
