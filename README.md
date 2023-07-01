@@ -6,7 +6,7 @@
 Allows the pentester a means of executing commands on the remote machine via Powershell's `Invoke-WmiMethod`
 
 We take advantage of using SMB file access and simply tail the file that receives our command output using Notepad++.  
-![undertheradar](https://github.com/g3tsyst3m/undertheradar/assets/19558280/0ea085e0-ed5f-4bfa-aeca-997263be000d)
+![undertheradar2](https://github.com/g3tsyst3m/undertheradar/assets/19558280/3e302c33-26da-4b89-b176-6dc945b25e77)
 
 # Dumpy.py
 
