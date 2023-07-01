@@ -15,6 +15,7 @@ We take advantage of using SMB file access and simply tail the file that receive
 # prompt.py
 
 **forces a windows username and password prompt to the victim's desktop and saves results to c:\users\public\creds.log**
+
 ![image](https://github.com/g3tsyst3m/undertheradar/assets/19558280/93e0d37b-1f96-4221-9be9-b72db3198adb)
 
 
