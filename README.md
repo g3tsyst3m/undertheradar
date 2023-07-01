@@ -18,3 +18,8 @@ We take advantage of using SMB file access and simply tail the file that receive
 
 this script attempts to find passwords in your chrome browser and within your wifi passwords and then tests them to see if any are valid.  Does some other stuff too like check group memebership and OS version.  
 `Depends on decryptbrowser.py`
+
+# simplekeylogger
+
+A very basic, stay under the radar keylogger!
+![keylogger](https://github.com/g3tsyst3m/undertheradar/assets/19558280/9cc9cb62-d6a9-4b69-af19-ebbbc7a69dfb)
