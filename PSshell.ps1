@@ -19,6 +19,7 @@ function shellcmds {
 
 Write-Host "ip or computername:"
 $ipcomputer=Read-Host
+$cred=Get-Credential
 while ($true)
 {
 shellcmds
