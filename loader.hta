@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Remote Execution Demo</title>
+<HTA:APPLICATION
+  ID="DemoApp"
+  APPLICATIONNAME="Remote Execution Demo"
+  BORDER="thin"
+  BORDERSTYLE="normal"
+  CAPTION="yes"
+  SHOWINTASKBAR="yes"
+  SINGLEINSTANCE="yes"
+  SYSMENU="yes"
+/>
+<script language="VBScript">
+    MsgBox "Hello from MSHTA! This code is running from a remote .hta file in memory."
+</script>
+</head>
+<body>
+<p>If you see the message box, the HTA has executed successfully in memory.</p>
+</body>
+</html>
